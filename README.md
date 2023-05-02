@@ -5,7 +5,7 @@ Ela fará todas as funções de um CRUD simulando uma loja de hardware e perifé
 ## Tecnologias
 - React<br>
 - TypeScript<br>
-- Bootstrap<br>
+- Tailwind<br>
 - NodeJS<br>
 
 ## Design

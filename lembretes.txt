@@ -1,0 +1,5 @@
+#7289da azul
+#424549 cinza claro
+#36393e cinza intermediario
+#282b30 cinza escuro
+#1e2124 preto
