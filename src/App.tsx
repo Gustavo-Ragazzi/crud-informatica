@@ -3,7 +3,7 @@ import MainContainer from './components/MainContainer';
 
 function App() {
   return (
-    <body className='bg-gray-800 h-screen'>
+    <body className='flex h-screen bg-gray-800'>
         <AdvancedFilter></AdvancedFilter>
         <MainContainer></MainContainer>
     </body>
