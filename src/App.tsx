@@ -3,10 +3,10 @@ import MainContainer from './components/MainContainer';
 
 function App() {
   return (
-    <body className='flex h-screen bg-gray-800'>
+    <div className='flex h-screen bg-gray-800'>
         <AdvancedFilter></AdvancedFilter>
         <MainContainer></MainContainer>
-    </body>
+    </div>
   );
 }
 

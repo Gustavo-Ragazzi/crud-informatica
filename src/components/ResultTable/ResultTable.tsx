@@ -21,10 +21,10 @@ export default function ResultTable() {
                     <td className="text-left px-4 py-1">R$ 100,00</td>
                     <td className="text-left px-4 py-1">Categoria 1</td>
                     <td className="text-left px-4 py-1">10</td>
-                    <td>
-                        <div className="flex items-center justify-end">
-                            <td><button><BsPenFill className="mr-3 align-middle"/></button></td>
-                            <td><button><BsTrash3Fill className="mr-3 align-middle"/></button></td>
+                    <td className="text-right px-4 py-1">
+                        <div className="flex items-center justify-end gap-3">
+                            <button><BsPenFill className="align-middle"/></button>
+                            <button><BsTrash3Fill className="align-middle"/></button>
                         </div>
                     </td>
                 </tr>
@@ -36,10 +36,10 @@ export default function ResultTable() {
                     <td className="text-left px-4 py-1">R$ 100,00</td>
                     <td className="text-left px-4 py-1">Categoria 1</td>
                     <td className="text-left px-4 py-1">10</td>
-                    <td>
-                        <div className="flex items-center justify-end">
-                            <td><button><BsPenFill className="mr-3 align-middle"/></button></td>
-                            <td><button><BsTrash3Fill className="mr-3 align-middle"/></button></td>
+                    <td className="text-right px-4 py-1">
+                        <div className="flex items-center justify-end gap-3">
+                            <button><BsPenFill className="align-middle"/></button>
+                            <button><BsTrash3Fill className="align-middle"/></button>
                         </div>
                     </td>
                 </tr>
@@ -51,10 +51,10 @@ export default function ResultTable() {
                     <td className="text-left px-4 py-1">R$ 100,00</td>
                     <td className="text-left px-4 py-1">Categoria 1</td>
                     <td className="text-left px-4 py-1">10</td>
-                    <td>
-                        <div className="flex items-center justify-end">
-                            <td><button><BsPenFill className="mr-3 align-middle"/></button></td>
-                            <td><button><BsTrash3Fill className="mr-3 align-middle"/></button></td>
+                    <td className="text-right px-4 py-1">
+                        <div className="flex items-center justify-end gap-3">
+                            <button><BsPenFill className="align-middle"/></button>
+                            <button><BsTrash3Fill className="align-middle"/></button>
                         </div>
                     </td>
                 </tr>
@@ -66,10 +66,10 @@ export default function ResultTable() {
                     <td className="text-left px-4 py-1">R$ 100,00</td>
                     <td className="text-left px-4 py-1">Categoria 1</td>
                     <td className="text-left px-4 py-1">10</td>
-                    <td>
-                        <div className="flex items-center justify-end">
-                            <td><button><BsPenFill className="mr-3 align-middle"/></button></td>
-                            <td><button><BsTrash3Fill className="mr-3 align-middle"/></button></td>
+                    <td className="text-right px-4 py-1">
+                        <div className="flex items-center justify-end gap-3">
+                            <button><BsPenFill className="align-middle"/></button>
+                            <button><BsTrash3Fill className="align-middle"/></button>
                         </div>
                     </td>
                 </tr>
@@ -81,10 +81,10 @@ export default function ResultTable() {
                     <td className="text-left px-4 py-1">R$ 100,00</td>
                     <td className="text-left px-4 py-1">Categoria 1</td>
                     <td className="text-left px-4 py-1">10</td>
-                    <td>
-                        <div className="flex items-center justify-end">
-                            <td><button><BsPenFill className="mr-3 align-middle"/></button></td>
-                            <td><button><BsTrash3Fill className="mr-3 align-middle"/></button></td>
+                    <td className="text-right px-4 py-1">
+                        <div className="flex items-center justify-end gap-3">
+                            <button><BsPenFill className="align-middle"/></button>
+                            <button><BsTrash3Fill className="align-middle"/></button>
                         </div>
                     </td>
                 </tr>
@@ -96,10 +96,10 @@ export default function ResultTable() {
                     <td className="text-left px-4 py-1">R$ 100,00</td>
                     <td className="text-left px-4 py-1">Categoria 1</td>
                     <td className="text-left px-4 py-1">10</td>
-                    <td>
-                        <div className="flex items-center justify-end">
-                            <td><button><BsPenFill className="mr-3 align-middle"/></button></td>
-                            <td><button><BsTrash3Fill className="mr-3 align-middle"/></button></td>
+                    <td className="text-right px-4 py-1">
+                        <div className="flex items-center justify-end gap-3">
+                            <button><BsPenFill className="align-middle"/></button>
+                            <button><BsTrash3Fill className="align-middle"/></button>
                         </div>
                     </td>
                 </tr>
@@ -111,10 +111,10 @@ export default function ResultTable() {
                     <td className="text-left px-4 py-1">R$ 100,00</td>
                     <td className="text-left px-4 py-1">Categoria 1</td>
                     <td className="text-left px-4 py-1">10</td>
-                    <td>
-                        <div className="flex items-center justify-end">
-                            <td><button><BsPenFill className="mr-3 align-middle"/></button></td>
-                            <td><button><BsTrash3Fill className="mr-3 align-middle"/></button></td>
+                    <td className="text-right px-4 py-1">
+                        <div className="flex items-center justify-end gap-3">
+                            <button><BsPenFill className="align-middle"/></button>
+                            <button><BsTrash3Fill className="align-middle"/></button>
                         </div>
                     </td>
                 </tr>
@@ -126,10 +126,10 @@ export default function ResultTable() {
                     <td className="text-left px-4 py-1">R$ 100,00</td>
                     <td className="text-left px-4 py-1">Categoria 1</td>
                     <td className="text-left px-4 py-1">10</td>
-                    <td>
-                        <div className="flex items-center justify-end">
-                            <td><button><BsPenFill className="mr-3 align-middle"/></button></td>
-                            <td><button><BsTrash3Fill className="mr-3 align-middle"/></button></td>
+                    <td className="text-right px-4 py-1">
+                        <div className="flex items-center justify-end gap-3">
+                            <button><BsPenFill className="align-middle"/></button>
+                            <button><BsTrash3Fill className="align-middle"/></button>
                         </div>
                     </td>
                 </tr>
@@ -141,10 +141,10 @@ export default function ResultTable() {
                     <td className="text-left px-4 py-1">R$ 100,00</td>
                     <td className="text-left px-4 py-1">Categoria 1</td>
                     <td className="text-left px-4 py-1">10</td>
-                    <td>
-                        <div className="flex items-center justify-end">
-                            <td><button><BsPenFill className="mr-3 align-middle"/></button></td>
-                            <td><button><BsTrash3Fill className="mr-3 align-middle"/></button></td>
+                    <td className="text-right px-4 py-1">
+                        <div className="flex items-center justify-end gap-3">
+                            <button><BsPenFill className="align-middle"/></button>
+                            <button><BsTrash3Fill className="align-middle"/></button>
                         </div>
                     </td>
                 </tr>
