@@ -3,23 +3,32 @@ import ResultTable from "../ResultTable/ResultTable";
 import SearchHeader from "../SearchHeader/SearchHeader";
 import { getDataFromAPI } from '../../connections';
 
+interface Storage {
+    id: number;
+    nome: string;
+    marca: string;
+    preco: number;
+    categoria: string;
+    qnt: number;    
+}
+
 export default function MainContainer() {
-  const [storageData, setStorageData] = useState([]);
+    const [storage, setStorage] = useState<Storage[]>([]);
 
-  useEffect(() => {
-    async function fetchStorageData() {
-      const data = await getDataFromAPI();
-      setStorageData(data);
+    useEffect(() => {
+        async function fetchData() {
+        const result = await getDataFromAPI();
+        setStorage(result);
     }
-    fetchStorageData();
-  }, []);
+    fetchData();
+}, []);
 
-  console.log(storageData)
+    console.log(storage)
 
-  return(
-      <main className="bg-gray-700 p-5 flex-1">
-          <SearchHeader></SearchHeader>
-          <ResultTable />
-      </main>
-  )
+    return(
+        <main className="bg-gray-700 p-5 flex-1">
+            <SearchHeader />
+            <ResultTable />
+        </main>
+    )
 }
