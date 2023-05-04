@@ -1,7 +1,14 @@
 import { BsTrash3Fill, BsPenFill } from "react-icons/bs";
 import { FcPlus } from "react-icons/fc";
 
-export default function ResultTable() {
+interface ResultTableProps {
+    storage: Storage[];
+}
+
+export default function ResultTable(props: ResultTableProps) {
+
+    console.log(props.storage)
+
     return (
         <table className="w-full my-6">
             <thead>
