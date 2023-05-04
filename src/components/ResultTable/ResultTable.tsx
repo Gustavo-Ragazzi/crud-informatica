@@ -5,16 +5,13 @@ import { FcPlus } from "react-icons/fc";
 
 export default function ResultTable (props: any) {
     const [result, setResult] = useState<any[]>([]);
-  
-    const loadObject = async () => {
-        const response = await props.storage;
-        setResult(response);
-    };
-  
+
     useEffect(() => {
+        async function loadObject() {
+            setResult(await props.storage);
+        }
         loadObject();
-        console.log(result)
-    }, []);
+    },[props.storage])
 
     return (
         <table key={"TebleResultTable"} className="w-full my-6">
