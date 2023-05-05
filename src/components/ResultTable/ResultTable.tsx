@@ -22,7 +22,7 @@ export default function ResultTable (props: any) {
                     <th className="text-left px-4">Preço</th>
                     <th className="text-left px-4">Categoria</th>
                     <th className="text-left px-4">Qnt</th>
-                    <th className="text-right"><button><FcPlus className="text-3xl"/></button></th>
+                    <th className="text-right" onClick={addNewItem}><button><FcPlus className="text-3xl"/></button></th>
                 </tr>
             </thead>
             <tbody key={"ResultTable"}>
@@ -44,4 +44,8 @@ export default function ResultTable (props: any) {
             </tbody>
         </table>
     )
+}
+
+function addNewItem() {
+    alert("")
 }
