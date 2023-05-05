@@ -2,7 +2,7 @@ import { FaFilter } from "react-icons/fa";
 
 export default function AdvancedFilter() {
     return (
-        <aside className="flex flex-col bg-gray-700 items-center mr-2 p-5 text-lg flex-shrink-0">
+        <aside className="flex flex-col bg-gray-700 items-center mr-2 p-5 text-lg flex-shrink-0 hidden">
             <div className="flex items-center gap-2">
                 <FaFilter className="text-white text-lg"/>
                 <h2 className="text-white flex">Filtrar por</h2>
