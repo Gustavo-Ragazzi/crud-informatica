@@ -7,6 +7,7 @@ export default function InputForm(props: any) {
                 name={props.name}
                 key={props.label + props.name}
                 placeholder={props.placeholder}
+                onChange={props.onChange}
             />
         </label>
     )
