@@ -3,11 +3,13 @@ export default function InputForm(props: any) {
         <label className="flex flex-col">
             <h3 className="text-white pl-4">{props.label}</h3>
             <input className="w-full h-12 bg-gray-500 px-3 text-white rounded-full" 
-                type={props.type}
-                name={props.name}
                 key={props.label + props.name}
+                type={props.type}
+                step={props.step}
+                name={props.name}
                 placeholder={props.placeholder}
                 onChange={props.onChange}
+                required={props.required}
             />
         </label>
     )
