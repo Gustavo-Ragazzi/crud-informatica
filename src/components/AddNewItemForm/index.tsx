@@ -3,6 +3,7 @@ import Button from "../Button"
 import InputForm from "../InputForm"
 import { FaTimes } from "react-icons/fa"
 import { getDataFromAPI } from "../../connections";
+import { routePost } from "../routes";
 
 interface AddNewItemFormProps {
     onClose: () => void;
@@ -23,32 +24,7 @@ export default function AddNewItemForm(props: AddNewItemFormProps) {
 
     const addNewItemSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
-        try {
-            const response = await fetch("http://localhost:8000/api/storage/", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    id: 15,
-                    nome: nome,
-                    marca: marca,
-                    preco: preco,
-                    categoria: categoria,
-                    qnt: qnt
-                })
-            });
-
-            if (!response.ok) {
-                throw new Error("Falha ao tentar adicionar item");
-            }
-
-            console.log("Item adicionado com sucesso!");
-        } catch (error) {
-            console.log(error)
-        }
-
+        routePost(nome, marca, preco, categoria, qnt)
     }
 
     return (
