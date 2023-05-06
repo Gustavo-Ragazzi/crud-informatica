@@ -3,9 +3,9 @@ import { BsTrash3Fill, BsPenFill } from "react-icons/bs";
 import { FcPlus } from "react-icons/fc";
 import AddNewItemForm from "../AddNewItemForm";
 
-
 export default function ResultTable (props: any) {
     const [result, setResult] = useState<any[]>([]);
+    const [showForm, setShowForm] = useState(false);
 
     useEffect(() => {
         async function loadObject() {
@@ -16,7 +16,6 @@ export default function ResultTable (props: any) {
 
     return (
         <>
-            <AddNewItemForm></AddNewItemForm>
             <table key={"TebleResultTable"} className="w-full my-6">
                 <thead>
                     <tr className="text-white">
@@ -25,7 +24,7 @@ export default function ResultTable (props: any) {
                         <th className="text-left px-4">Preço</th>
                         <th className="text-left px-4">Categoria</th>
                         <th className="text-left px-4">Qnt</th>
-                        <th className="text-right" onClick={addNewItem}><button><FcPlus className="text-3xl"/></button></th>
+                        <th className="text-right" onClick={() => setShowForm(true)}><button><FcPlus className="text-3xl"/></button></th>
                     </tr>
                 </thead>
                 <tbody key={"ResultTable"}>
@@ -46,10 +45,7 @@ export default function ResultTable (props: any) {
                     ))}
                 </tbody>
             </table>
+            {showForm && <AddNewItemForm onClose={() => setShowForm(false)} />}
         </>
     )
-}
-
-function addNewItem() {
-    alert("")
 }

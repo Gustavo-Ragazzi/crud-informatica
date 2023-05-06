@@ -3,11 +3,16 @@ import Button from "../Button"
 import InputForm from "../InputForm"
 import { FaTimes } from "react-icons/fa"
 
-export default function AddNewItemForm() {
-    const [isFormVisible, setIsFormVisible] = useState(false);
+interface AddNewItemFormProps {
+    onClose: () => void;
+  }
+
+export default function AddNewItemForm(props: AddNewItemFormProps) {
+    const [isFormVisible, setIsFormVisible] = useState(true);
 
     const hideForm = () => {
         setIsFormVisible(false);
+        props.onClose();
     };
 
     return (
