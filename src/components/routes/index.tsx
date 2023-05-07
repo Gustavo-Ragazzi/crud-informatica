@@ -15,6 +15,9 @@ async function nextValidId() {
 }
 
 export async function routePost(nome:string, marca:string, preco:number, categoria:string, qnt:number) {
+    const nextId = await nextValidId();
+    console.log("nextId = ", nextId)
+
     try {
         const response = await fetch(apiUrl, {
             method: "POST",
@@ -22,7 +25,7 @@ export async function routePost(nome:string, marca:string, preco:number, categor
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                id: 13,
+                id: nextId,
                 nome: nome,
                 marca: marca,
                 preco: preco,
@@ -34,7 +37,6 @@ export async function routePost(nome:string, marca:string, preco:number, categor
         if (!response.ok) {
             throw new Error("Falha ao tentar adicionar item");
         }
-
         console.log("Item adicionado com sucesso!");
     } catch (error) {
         console.log(error)
