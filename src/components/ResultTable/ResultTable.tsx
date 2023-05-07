@@ -4,11 +4,19 @@ import { FcPlus } from "react-icons/fc";
 import AddNewItemForm from "../AddNewItemForm";
 import EditItemForm from "../EditItemForm";
 
+interface Item {
+    nome: string;
+    marca: string;
+    preco: number;
+    categoria: string;
+    qnt: number;
+}
+
 export default function ResultTable (props: any) {
     const [result, setResult] = useState<any[]>([]);
     const [showAddForm, setAddShowForm] = useState(false);
     const [showEditForm, setEditShowForm] = useState(false);
-    const [item, setItem] = useState<any[]>([]);
+    const [item, setItem] = useState<Item>();
 
     useEffect(() => {
         async function loadObject() {
@@ -49,7 +57,7 @@ export default function ResultTable (props: any) {
                 </tbody>
             </table>
             {showAddForm && <AddNewItemForm handlePost={props.handlePost} onClose={() => setAddShowForm(false)} />}
-            {showEditForm && <EditItemForm item={item} handlePatch={props.handlePatch} onClose={() => setEditShowForm(false)} />}
+            {showEditForm && item && <EditItemForm item={item} handlePatch={props.handlePatch} onClose={() => setEditShowForm(false)} />}
         </>
     )
 }

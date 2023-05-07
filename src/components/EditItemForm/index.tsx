@@ -13,18 +13,19 @@ interface Item {
 interface EditItemFormProps {
     handlePatch: (item: Item) => void;
     onClose: () => void;
-    item: Array<Item>;
+    item: Item;
 }
 
 export default function EditItemForm(props: EditItemFormProps) {
     const [isFormVisible, setIsFormVisible] = useState(true);
-    const [nome, setNome] = useState("");
-    const [marca, setMarca] = useState("");
-    const [preco, setPreco] = useState<number>(0);
-    const [categoria, setCategoria] = useState("");
-    const [qnt, setQnt] = useState<number>(0);
+    const [nome, setNome] = useState(props.item.nome);
+    const [marca, setMarca] = useState(props.item.marca);
+    const [preco, setPreco] = useState(props.item.preco);
+    const [categoria, setCategoria] = useState(props.item.categoria);
+    const [qnt, setQnt] = useState(props.item.qnt);
 
     console.log(props.item)
+    console.log(props.item.nome)
 
     const hideForm = () => {
         setIsFormVisible(false);
@@ -50,6 +51,7 @@ export default function EditItemForm(props: EditItemFormProps) {
                             label={"Nome"}
                             type={"text"}
                             name={"nome"}
+                            value={nome}
                             placeholder={"Ryzen 5 5600x"}
                             required={true}
                             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNome(e.target.value)}
@@ -58,6 +60,7 @@ export default function EditItemForm(props: EditItemFormProps) {
                             label={"Marca"}
                             type={"text"}
                             name={"marca"}
+                            value={marca}
                             placeholder={"Asus"}
                             required={true}
                             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setMarca(e.target.value)}
@@ -67,6 +70,7 @@ export default function EditItemForm(props: EditItemFormProps) {
                             type={"number"}
                             step={"any"}
                             name={"preco"}
+                            value={preco}
                             min={0}
                             placeholder={"1399.99"}
                             required={true}
@@ -76,6 +80,7 @@ export default function EditItemForm(props: EditItemFormProps) {
                             label={"Categoria"}
                             type={"text"}
                             name={"categoria"}
+                            value={categoria}
                             placeholder={"CPU"}
                             required={true}
                             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setCategoria(e.target.value)}
@@ -84,6 +89,7 @@ export default function EditItemForm(props: EditItemFormProps) {
                             label={"Qnt"}
                             type={"number"}
                             name={"qnt"}
+                            value={qnt}
                             min={0}
                             placeholder={"5"}
                             required={true}
