@@ -1,5 +1,4 @@
 # CRUD Informatica
-Projeto para fins educacionais.<br>
 Ela fará todas as funções de um CRUD simulando uma loja de hardware e periféricos.
 
 ## Tecnologias
@@ -8,14 +7,17 @@ Ela fará todas as funções de um CRUD simulando uma loja de hardware e perifé
 - Tailwind<br>
 - NodeJS<br>
 
-## Design
-Farei inspirado em meu rascunho feito no [Figma](https://www.figma.com/file/fskydKDAUDAlUwR6LAPBWm/Crud-Informatica?node-id=0%3A1&t=mzBMIRzm5msV67gF-1).
-
 ## Funcionalidades
+Receber uma lista baseada em uma API<br>
+Adicionar novos itens a lista<br>
+Apagar itens da lista<br>
+Editar itens já existentes da lista<br>
+Realizar pesquisa através do filtro<br>
 
-[ ] Criar layout inicial<br>
-[ ] Criar API com Express<br>
-[ ] Criar item com campos de Nome, Marca, Preço, Quantidade e Categoria<br>
-[ ] Criar filtros de pesquisa<br>
-[ ] Botão de apagar e editar<br>
-[ ] Hospedar API em algum site gratuito<br>
+## Como usar
+Para iniciar em modo de desenvolvimento, entre com o seguinte comando na pasta do projeto:
+```
+npm install
+npm start
+```
+Para carregar a lista será necessário executar a API [crud-informatica-api](https://github.com/Gustavo-Ragazzi/crud-informatica-api).
