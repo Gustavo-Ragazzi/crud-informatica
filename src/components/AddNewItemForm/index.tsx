@@ -32,7 +32,6 @@ export default function AddNewItemForm(props: AddNewItemFormProps) {
         e.preventDefault();
         const item: Item = {nome, marca, preco, categoria, qnt};
         props.handlePost(item);
-        setIsFormVisible(false);
     }
 
     return (

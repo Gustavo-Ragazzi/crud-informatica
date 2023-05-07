@@ -3,19 +3,22 @@ import { apiUrl, getDataFromAPI } from "../../connections";
 async function nextValidId() {
     const data = await getDataFromAPI();
 
-    if (data[data.length - 1].id === data.length - 1) {
-        return data.length
-    } else {
-        for (let i = 0; i < data.length; i++) {
-            if (data[i].id !== i) {
-                return i;
-            }
-        } 
+    if (data.length === 0) {
+        return 1;
     }
+
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].id !== i + 1) {
+            return i + 1;
+        }
+    }
+    
+    return data.length + 1;
 }
 
 export async function routePost(nome:string, marca:string, preco:number, categoria:string, qnt:number) {
     const nextId = await nextValidId();
+    console.log("nextId = ", nextId)
 
     try {
         const response = await fetch(apiUrl, {
