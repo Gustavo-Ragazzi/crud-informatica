@@ -42,14 +42,16 @@ export async function routePost(nome:string, marca:string, preco:number, categor
     }
 }
 
-export async function routePatch(nome:string, marca:string, preco:number, categoria:string, qnt:number) {
+export async function routePatch(nome:string, marca:string, preco:number, categoria:string, qnt:number, id:number) {
+    console.log(apiUrl + id)
     try {
-        const response = await fetch(apiUrl, {
+        const response = await fetch(apiUrl + id, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
+                id: id,
                 nome: nome,
                 marca: marca,
                 preco: preco,

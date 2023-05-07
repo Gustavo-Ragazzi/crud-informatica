@@ -10,6 +10,7 @@ interface Item {
     preco: number;
     categoria: string;
     qnt: number;
+    id: number;
 }
 
 export default function ResultTable (props: any) {

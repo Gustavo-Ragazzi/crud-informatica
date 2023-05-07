@@ -10,6 +10,7 @@ interface Item {
     preco: number;
     categoria: string;
     qnt: number;
+    id: number;
 }
 
 export default function MainContainer() {
@@ -42,19 +43,20 @@ export default function MainContainer() {
 
     const handlePatch = async(item: Item) => {
         console.log(item)
-    //     const nome = item.nome;
-    //     const marca = item.marca;
-    //     const preco = item.preco;
-    //     const categoria = item.categoria;
-    //     const qnt = item.qnt;
+         const nome = item.nome;
+         const marca = item.marca;
+         const preco = item.preco;
+         const categoria = item.categoria;
+         const qnt = item.qnt;
+         const id = item.id;
 
-    //     try {
-    //         await routePatch(nome, marca, preco, categoria, qnt);
-    //         const result = await getDataFromAPI();
-    //         setStorage(result);
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
+         try {
+             await routePatch(nome, marca, preco, categoria, qnt, id);
+             const result = await getDataFromAPI();
+             setStorage(result);
+         } catch (error) {
+             console.log(error);
+         }
     }
 
     const handleDelete = async(id: number) => {

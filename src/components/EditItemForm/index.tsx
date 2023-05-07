@@ -9,6 +9,7 @@ interface Item {
     preco: number;
     categoria: string;
     qnt: number;
+    id: number;
 }
 interface EditItemFormProps {
     handlePatch: (item: Item) => void;
@@ -24,9 +25,6 @@ export default function EditItemForm(props: EditItemFormProps) {
     const [categoria, setCategoria] = useState(props.item.categoria);
     const [qnt, setQnt] = useState(props.item.qnt);
 
-    console.log(props.item)
-    console.log(props.item.nome)
-
     const hideForm = () => {
         setIsFormVisible(false);
         props.onClose();
@@ -34,9 +32,9 @@ export default function EditItemForm(props: EditItemFormProps) {
 
     const handleEdit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const item: Item = {nome, marca, preco, categoria, qnt};
-        // props.handlePost(item);
-        console.log(item)
+        const id = props.item.id;
+        const item: Item = {nome, marca, preco, categoria, qnt, id};
+        props.handlePatch(item);
     }
 
     return (
