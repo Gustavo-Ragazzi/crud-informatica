@@ -14,12 +14,14 @@ interface Item {
 }
 
 export default function MainContainer() {
-    const [storage, setStorage] = useState([]);
+    const [storage, setStorage] = useState<Item[]>([]);
+    const [filteredStorage, setFilteredStorage] = useState<Item[]>([]);
 
     useEffect(() => {
         async function fetchData() {
             const result = await getDataFromAPI();
             setStorage(result);
+            setFilteredStorage(result);
     }
     fetchData();
     }, []);
@@ -36,6 +38,7 @@ export default function MainContainer() {
             await routePost(nome, marca, preco, categoria, qnt);
             const result = await getDataFromAPI();
             setStorage(result);
+            setFilteredStorage(result);
         } catch (error) {
             console.log(error);
         }
@@ -54,6 +57,7 @@ export default function MainContainer() {
              await routePatch(nome, marca, preco, categoria, qnt, id);
              const result = await getDataFromAPI();
              setStorage(result);
+             setFilteredStorage(result);
          } catch (error) {
              console.log(error);
          }
@@ -64,15 +68,26 @@ export default function MainContainer() {
             await routeDelete(id);
             const result = await getDataFromAPI();
             setStorage(result);
+            setFilteredStorage(result);
         } catch (error) {
             console.log(error);
         }
     };
 
+    const handleSearch = (searchValue: string) => {
+        const newFilteredStorage = storage.filter(
+            (item) =>
+                item.nome.toLowerCase().includes(searchValue.toLowerCase()) ||
+                item.marca.toLowerCase().includes(searchValue.toLowerCase()) ||
+                item.categoria.toLowerCase().includes(searchValue.toLowerCase())
+        );
+        setFilteredStorage(newFilteredStorage);
+    }
+
     return(
         <main className="bg-gray-700 p-5 flex-1">
-            <SearchHeader />
-            <ResultTable storage={storage} handlePost={handlePost} handlePatch={handlePatch} handleDelete={handleDelete} />
+            <SearchHeader onSearch={handleSearch}/>
+            <ResultTable storage={filteredStorage} handlePost={handlePost} handlePatch={handlePatch} handleDelete={handleDelete} />
         </main>
     )
 }
