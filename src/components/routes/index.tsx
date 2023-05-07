@@ -16,7 +16,6 @@ async function nextValidId() {
 
 export async function routePost(nome:string, marca:string, preco:number, categoria:string, qnt:number) {
     const nextId = await nextValidId();
-    console.log("nextId = ", nextId)
 
     try {
         const response = await fetch(apiUrl, {
@@ -38,6 +37,31 @@ export async function routePost(nome:string, marca:string, preco:number, categor
             throw new Error("Falha ao tentar adicionar item");
         }
         console.log("Item adicionado com sucesso!");
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export async function routePatch(nome:string, marca:string, preco:number, categoria:string, qnt:number) {
+    try {
+        const response = await fetch(apiUrl, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                nome: nome,
+                marca: marca,
+                preco: preco,
+                categoria: categoria,
+                qnt: qnt
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error("Falha ao tentar adicionar item");
+        }
+        console.log("Item editado com sucesso!");
     } catch (error) {
         console.log(error)
     }
