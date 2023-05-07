@@ -2,9 +2,16 @@ import { useState } from "react"
 import Button from "../Button"
 import InputForm from "../InputForm"
 import { FaTimes } from "react-icons/fa"
-import { routePost } from "../routes";
 
+interface Item {
+    nome: string;
+    marca: string;
+    preco: number;
+    categoria: string;
+    qnt: number;
+}
 interface AddNewItemFormProps {
+    handlePost: (item: Item) => void;
     onClose: () => void;
 }
 
@@ -21,9 +28,10 @@ export default function AddNewItemForm(props: AddNewItemFormProps) {
         props.onClose();
     };
 
-    const addNewItemSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        routePost(nome, marca, preco, categoria, qnt)
+        const item: Item = {nome, marca, preco, categoria, qnt};
+        props.handlePost(item);
     }
 
     return (
@@ -33,7 +41,7 @@ export default function AddNewItemForm(props: AddNewItemFormProps) {
                     <button className="absolute top-0 right-0 p-2 hover:bg-gray-400" onClick={hideForm}>
                         <FaTimes />
                     </button>
-                    <form className="flex flex-col gap-5 justify-center" onSubmit={addNewItemSubmit}>
+                    <form className="flex flex-col gap-5 justify-center" onSubmit={handleSubmit}>
                         <InputForm
                             label={"Nome"}
                             type={"text"}

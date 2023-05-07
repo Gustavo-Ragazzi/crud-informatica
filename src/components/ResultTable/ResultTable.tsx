@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { BsTrash3Fill, BsPenFill } from "react-icons/bs";
 import { FcPlus } from "react-icons/fc";
 import AddNewItemForm from "../AddNewItemForm";
-import { routeDelete } from "../routes";
 
 export default function ResultTable (props: any) {
     const [result, setResult] = useState<any[]>([]);
@@ -39,14 +38,14 @@ export default function ResultTable (props: any) {
                             <td key={item + "icons"} className="text-right px-4 py-2">
                                 <div key={item + "div"}  className="flex items-center justify-end gap-3">
                                     <button id={"edit" + index}><BsPenFill   className="align-middle"/></button>
-                                    <button onClick={() => routeDelete(item.id)} id={"delete" + item.id}><BsTrash3Fill className="align-middle"/></button>
+                                    <button onClick={() => props.handleDelete(item.id)} id={"delete" + item.id}><BsTrash3Fill className="align-middle"/></button>
                                 </div>
                             </td>
                         </tr>
                     ))}
                 </tbody>
             </table>
-            {showForm && <AddNewItemForm onClose={() => setShowForm(false)} />}
+            {showForm && <AddNewItemForm handlePost={props.handlePost} onClose={() => setShowForm(false)} />}
         </>
     )
 }
