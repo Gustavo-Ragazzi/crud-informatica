@@ -13,6 +13,7 @@ interface Item {
 interface EditItemFormProps {
     handlePatch: (item: Item) => void;
     onClose: () => void;
+    item: Array<Item>;
 }
 
 export default function EditItemForm(props: EditItemFormProps) {
@@ -22,6 +23,8 @@ export default function EditItemForm(props: EditItemFormProps) {
     const [preco, setPreco] = useState<number>(0);
     const [categoria, setCategoria] = useState("");
     const [qnt, setQnt] = useState<number>(0);
+
+    console.log(props.item)
 
     const hideForm = () => {
         setIsFormVisible(false);
