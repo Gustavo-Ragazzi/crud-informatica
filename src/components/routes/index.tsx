@@ -1,16 +1,18 @@
 import { apiUrl, getDataFromAPI } from "../../connections";
 
 async function nextValidId() {
-    const data = await getDataFromAPI()
+    const data = await getDataFromAPI();
 
-    for (let i = 0; i < data.lenght; i++) {
-        if (data[i].id !== i) {
-            console.log(i);
-        }
+    if (data[data.length - 1].id === data.length - 1) {
+        return data.length
+    } else {
+        for (let i = 0; i < data.length; i++) {
+            if (data[i].id !== i) {
+                return i;
+            }
+        } 
     }
-
 }
-nextValidId()
 
 export async function routePost(nome:string, marca:string, preco:number, categoria:string, qnt:number) {
     try {
