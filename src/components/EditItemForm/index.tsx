@@ -11,7 +11,7 @@ interface Item {
     qnt: number;
 }
 interface EditItemFormProps {
-    handlePost: (item: Item) => void;
+    handlePatch: (item: Item) => void;
     onClose: () => void;
 }
 

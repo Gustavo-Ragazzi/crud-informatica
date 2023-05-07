@@ -8,6 +8,7 @@ export default function ResultTable (props: any) {
     const [result, setResult] = useState<any[]>([]);
     const [showAddForm, setAddShowForm] = useState(false);
     const [showEditForm, setEditShowForm] = useState(false);
+    const [itemId, setItemId] = useState(null);
 
     useEffect(() => {
         async function loadObject() {
@@ -39,7 +40,7 @@ export default function ResultTable (props: any) {
                             <td key={item.qnt} className="text-left px-4 py-2">{item.qnt}</td>
                             <td key={item + "icons"} className="text-right px-4 py-2">
                                 <div key={item + "div"}  className="flex items-center justify-end gap-3">
-                                    <button onClick={() => setEditShowForm(true)} id={"edit" + index} className="hover:text-green-600"><BsPenFill className="align-middle"/></button>
+                                <button onClick={() => { props.handlePatch(item.id); setEditShowForm(true); }} itemID="item.id" id={"edit" + index} className="hover:text-green-600"><BsPenFill className="align-middle"/></button>
                                     <button onClick={() => props.handleDelete(item.id)} id={"delete" + item.id} className="hover:text-red-600"><BsTrash3Fill className="align-middle"/></button>
                                 </div>
                             </td>
@@ -48,7 +49,7 @@ export default function ResultTable (props: any) {
                 </tbody>
             </table>
             {showAddForm && <AddNewItemForm handlePost={props.handlePost} onClose={() => setAddShowForm(false)} />}
-            {showEditForm && <EditItemForm handlePost={props.handlePost} onClose={() => setEditShowForm(false)} />}
+            {showEditForm && <EditItemForm handlePatch={props.handlePatch} onClose={() => setEditShowForm(false)} />}
         </>
     )
 }
