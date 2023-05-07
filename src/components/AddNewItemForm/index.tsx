@@ -2,7 +2,6 @@ import { useState } from "react"
 import Button from "../Button"
 import InputForm from "../InputForm"
 import { FaTimes } from "react-icons/fa"
-import { getDataFromAPI } from "../../connections";
 import { routePost } from "../routes";
 
 interface AddNewItemFormProps {

@@ -1,12 +1,26 @@
+import { apiUrl, getDataFromAPI } from "../../connections";
+
+async function nextValidId() {
+    const data = await getDataFromAPI()
+
+    for (let i = 0; i < data.lenght; i++) {
+        if (data[i].id !== i) {
+            console.log(i);
+        }
+    }
+
+}
+nextValidId()
+
 export async function routePost(nome:string, marca:string, preco:number, categoria:string, qnt:number) {
     try {
-        const response = await fetch("http://localhost:8000/api/storage/", {
+        const response = await fetch(apiUrl, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                id: 15,
+                id: 13,
                 nome: nome,
                 marca: marca,
                 preco: preco,
