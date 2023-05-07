@@ -42,3 +42,21 @@ export async function routePost(nome:string, marca:string, preco:number, categor
         console.log(error)
     }
 }
+
+export async function routeDelete(id: number) {
+    try {
+        const response = await fetch(apiUrl + id, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+    });
+
+    if(!response.ok) {
+        throw new Error ("Falha ao tentar excluir item")
+    }
+    console.log("Item excluído com sucesso");
+    } catch (error) {
+        console.log(error);
+    }
+}
