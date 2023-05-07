@@ -29,7 +29,7 @@ export default function ResultTable (props: any) {
                 </thead>
                 <tbody key={"ResultTable"}>
                     {result.map((item, index) => (
-                        <tr key={item} className={`text-white ${index % 2 === 0 ? "bg-gray-900" : "bg-gray-800" }`}>
+                        <tr key={"tr" + item + index} className={`text-white ${index % 2 === 0 ? "bg-gray-900" : "bg-gray-800" }`}>
                             <td key={item.nome} className="text-left px-4 py-2">{item.nome}</td>
                             <td key={item.marca} className="text-left px-4 py-2">{item.marca}</td>
                             <td key={item.preco} className="text-left px-4 py-2">R$ {item.preco}</td>
