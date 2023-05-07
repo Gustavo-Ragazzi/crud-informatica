@@ -10,6 +10,7 @@ export default function InputForm(props: any) {
                 placeholder={props.placeholder}
                 onChange={props.onChange}
                 required={props.required}
+                min={props.min}
             />
         </label>
     )

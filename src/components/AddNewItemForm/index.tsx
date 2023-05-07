@@ -37,7 +37,7 @@ export default function AddNewItemForm(props: AddNewItemFormProps) {
     return (
         <>
             {isFormVisible && (
-                <div id="add-form" className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-600 rounded-md p-6 shadow-lg w-9/12">
+                <div id="add-form" className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-600 rounded-md p-6 shadow-lg w-1/3">
                     <button className="absolute top-0 right-0 p-2 hover:bg-gray-400" onClick={hideForm}>
                         <FaTimes />
                     </button>
@@ -63,6 +63,7 @@ export default function AddNewItemForm(props: AddNewItemFormProps) {
                             type={"number"}
                             step={"any"}
                             name={"preco"}
+                            min={0}
                             placeholder={"1399.99"}
                             required={true}
                             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPreco(parseFloat(e.target.value))}
@@ -79,6 +80,7 @@ export default function AddNewItemForm(props: AddNewItemFormProps) {
                             label={"Qnt"}
                             type={"number"}
                             name={"qnt"}
+                            min={0}
                             placeholder={"5"}
                             required={true}
                             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setQnt(parseFloat(e.target.value))}
