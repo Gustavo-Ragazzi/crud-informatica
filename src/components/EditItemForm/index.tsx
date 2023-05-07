@@ -35,6 +35,7 @@ export default function EditItemForm(props: EditItemFormProps) {
         const id = props.item.id;
         const item: Item = {nome, marca, preco, categoria, qnt, id};
         props.handlePatch(item);
+        setIsFormVisible(false);
     }
 
     return (
